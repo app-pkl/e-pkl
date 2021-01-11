@@ -37,7 +37,7 @@
                     <div>
                     </div>
                     <div>
-                        <button type="button" class="btn btn-outline-success"><i class="fas fa-plus"></i> Add Pengajuan</button>
+                        <a href="<?= base_url('mahasiswa/home/pengajuan') ?>" class="btn btn-outline-success"><i class="fas fa-plus"></i> Add Pengajuan</a>
                     </div>
                 </div>
                 </br>
@@ -108,8 +108,8 @@
                                 <td><?= $row->createAt; ?></td>
                                 <td align="center">
                                     <?php if ($row->status_daftar == 0) { ?>
-                                        <button type="button" class="btn btn-outline-info">Edit</button>
-                                        <button type="button" class="btn btn-outline-danger">Delete</button>
+                                        <a href="<?= base_url('mahasiswa/home/editPengajuan/' . $row->pkl_id); ?>" class="btn btn-outline-info">Edit</a>
+                                        <a href="<?= base_url('mahasiswa/home/delete/' . $row->pkl_id); ?>" class="btn btn-outline-danger">Delete</a>
                                     <?php } else { ?>
                                         No Action!
                                     <?php } ?>

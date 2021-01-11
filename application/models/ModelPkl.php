@@ -58,4 +58,10 @@ class ModelPkl extends CI_Model
     {
         $this->db->delete($table, $id);
     }
+
+    public function insert2($table, $data)
+    {
+        $this->db->insert($table, $data);
+        return $this->db->insert_id();
+    }
 }
