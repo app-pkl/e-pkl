@@ -75,7 +75,7 @@
                 <!-- /.card-body -->
                 <div class="card-footer">
                     <button type="submit" class="btn btn-info">Cretae Mahasiswa</button>
-                    <a href="<?= base_url('mahasiswa/usr'); ?>" class="btn btn-default float-right">Cancel</a>
+                    <a href="<?= base_url('mahasiswa/mhs'); ?>" class="btn btn-default float-right">Cancel</a>
                 </div>
                 <!-- /.card-footer -->
             </form>
@@ -110,15 +110,6 @@
                     }
                 })
             }
-        })
-
-        const swall = $('.swall').data('swall');
-        if (swall) {
-            Swal.fire({
-                title: 'Data Berhasil!',
-                text: swall,
-                icon: 'success'
-            });
-        }
+        });
     });
 </script>

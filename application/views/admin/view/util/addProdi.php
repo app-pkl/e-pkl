@@ -30,7 +30,7 @@
         <!-- Default box -->
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">Edit Data Kelompok</h3>
+                <h3 class="card-title">Form <?= $title ?></h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
@@ -38,46 +38,36 @@
             if ($this->session->flashdata('err') == true) { ?>
                 <p style="color: red;"><?php echo $this->session->flashdata('err'); ?></p>
             <?php } ?>
-            <form class="form-horizontal" action="<?= base_url('mahasiswa/mhs/update'); ?>" method="post">
-                <input type="hidden" name="id" value="<?= $dataMahasiswa->id ?>" />
-                <input type="hidden" name="user_id" value="<?= $dataMahasiswa->user_id ?>" />
+            <form class="form-horizontal" action="<?= base_url('admin/util/createProdi'); ?>" method="post">
                 <div class="card-body">
                     <div class="form-group row">
-                        <label for="name" class="col-sm-2 col-form-label">NPM</label>
+                        <label for="name" class="col-sm-2 col-form-label">Name</label>
                         <div class="col-sm-10">
-                            <input type="text" value="<?= $dataMahasiswa->npm ?>" name="npm" class="form-control" id="npm" required placeholder="NPM">
+                            <input type="text" name="name" class="form-control" id="name" required placeholder="Name">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="username" class="col-sm-2 col-form-label">Name</label>
+                        <label for="username" class="col-sm-2 col-form-label">Kode Prodi..</label>
                         <div class="col-sm-10">
-                            <input type="text" value="<?= $dataMahasiswa->nama ?>" name="name" class="form-control" id="name" required placeholder="Name">
+                            <input type="text" name="kode" class="form-control" id="kode" required placeholder="Kode Prodi">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="level" class="col-sm-2 col-form-label">Jurusan</label>
                         <div class="col-sm-10">
-                            <select class="form-control" name="jurusan" id="jurusan" required>
-                                <option>Pilih Jurusan....</option>
+                            <select class="form-control" name="jurusan" required>
+                                <option>Pilih Jurusan</option>
                                 <?php foreach ($jurusan as $val) : ?>
                                     <option value="<?= $val->id ?>"><?= $val->nama ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="level" class="col-sm-2 col-form-label">Prodi</label>
-                        <div class="col-sm-10">
-                            <select class="form-control" id="prodi" name="prodi" required>
-                                <option>Pilih prodi....</option>
-                            </select>
-                        </div>
-                    </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-info">Edit Mahasiswa</button>
-                    <a href="<?= base_url('mahasiswa/mhs'); ?>" class="btn btn-default float-right">Cancel</a>
+                    <button type="submit" class="btn btn-info">Cretae Prodi</button>
+                    <a href="<?= base_url('admin/util'); ?>" class="btn btn-default float-right">Cancel</a>
                 </div>
                 <!-- /.card-footer -->
             </form>
@@ -87,40 +77,5 @@
     </section>
     <!-- /.content -->
 </div>
-
-
 <!-- /.content-wrapper -->
 <?php echo $footer; ?>
-
-<script>
-    $(function() {
-        $.ajaxSetup({
-            type: 'POST',
-            url: `<?= base_url('/mahasiswa/mhs/loadData') ?>`,
-            caches: false
-        });
-        $('.form-horizontal #jurusan').change(function() {
-            var value = $(this).val();
-            if (value > 0) {
-                $.ajax({
-                    data: {
-                        module: 'prodi',
-                        id: value
-                    },
-                    success: function(response) {
-                        $("#prodi").html(response);
-                    }
-                })
-            }
-        })
-
-        const swall = $('.swall').data('swall');
-        if (swall) {
-            Swal.fire({
-                title: 'Data Berhasil!',
-                text: swall,
-                icon: 'success'
-            });
-        }
-    });
-</script>

@@ -79,10 +79,10 @@ class Mhs extends CI_Controller
         $modul = $this->input->post('module');
         $id = $this->input->post('id');
         if ($modul == 'prodi') {
-            $data = $this->modeladmin->getWhere2('prodi', ['jurusan_id', $id]);
+            $data = $this->modeladmin->getWhere2('prodi', ['jurusan_id' => $id]);
             echo "<option>Pilih Prodi...</option>";
             foreach ($data as $val) {
-                echo "<option value=" . $val->id . ">" . $val->nama . "</option>";
+                echo "<option value=" . '"' . $val->id . '"' . ">" . $val->nama . "</option>";
             }
         }
     }

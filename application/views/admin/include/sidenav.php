@@ -95,6 +95,15 @@
                               </a>
                           </li>
 
+                          <li class="nav-item">
+                              <a href="<?= base_url('admin/util') ?>" class="nav-link">
+                                  <i class="nav-icon fas fa-user-shield"></i>
+                                  <p>
+                                      Utils
+                                  </p>
+                              </a>
+                          </li>
+
                           <li class="nav-item has-treeview">
                               <a href="#" class="nav-link">
                                   <i class="nav-icon fas fa-tools"></i>
