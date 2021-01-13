@@ -18,6 +18,11 @@ class ModelDosen extends CI_Model
         return $this->db->get_where($table, $where)->row();
     }
 
+    public function getWhere2($table, $where)
+    {
+        return $this->db->get_where($table, $where)->result();
+    }
+
     public function update($table, $data, $id)
     {
         return $this->db->update($table, $data, $id);

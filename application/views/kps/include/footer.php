@@ -2,7 +2,7 @@
     <div class="float-right d-none d-sm-block">
         <b>Version</b> 3.0.5
     </div>
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
+    <strong>Copyright &copy; 2020 <a href="http://adminlte.io">innovation.io</a>.</strong> All rights
     reserved.
 </footer>
 
@@ -29,9 +29,16 @@
 <script src="<?php echo base_url('assets/'); ?>plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="<?php echo base_url('assets/'); ?>plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
+<!-- Select2 -->
+<script src="<?php echo base_url('assets/'); ?>plugins/select2/js/select2.full.min.js"></script>
+
 <script>
     $(function() {
         $("#example1").DataTable({
+            "responsive": true,
+            "autoWidth": false,
+        });
+        $("#example3").DataTable({
             "responsive": true,
             "autoWidth": false,
         });
@@ -44,6 +51,16 @@
             "autoWidth": false,
             "responsive": true,
         });
+
+        //Initialize Select2 Elements
+        $('#select2').select2({
+            placeholder: 'Pilih data'
+        })
+
+        //Initialize Select2 Elements
+        $('#select2bs4').select2({
+            theme: 'bootstrap4'
+        })
     });
 </script>
 </body>

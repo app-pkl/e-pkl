@@ -64,4 +64,8 @@ class ModelPkl extends CI_Model
         $this->db->insert($table, $data);
         return $this->db->insert_id();
     }
+
+    public function insertMultiple($table, $data){
+        return $this->db->insert_batch($table, $data); 
+    }
 }

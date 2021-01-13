@@ -20,10 +20,10 @@ class Home extends CI_Controller
         );
 
         $data = array(
-            "header"     => $this->load->view('up2ai/include/header', $config, true),
-            "navbar"     => $this->load->view('up2ai/include/navbar', array(), true),
-            "sidenav"    => $this->load->view('up2ai/include/sidenav', array(), true),
-            "footer"     => $this->load->view('up2ai/include/footer', array(), true),
+            "header"     => $this->load->view('kps/include/header', $config, true),
+            "navbar"     => $this->load->view('kps/include/navbar', array(), true),
+            "sidenav"    => $this->load->view('kps/include/sidenav', array(), true),
+            "footer"     => $this->load->view('kps/include/footer', array(), true),
             "title"      => 'Dashboard',
             // "dataPengajuan" => $this->modelusr->showPklById('pkl')
         );

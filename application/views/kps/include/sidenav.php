@@ -14,7 +14,7 @@
                   <img src="<?php echo base_url('assets/'); ?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
               </div>
               <div class="info">
-                  <a href="#" class="d-block">Tri Rahmat Aribowo</a>
+                  <a href="#" class="d-block"><?= $this->session->userdata('name'); ?></a>
               </div>
           </div>
 
@@ -34,7 +34,7 @@
                           <img src="<?php echo base_url('assets/'); ?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                       </div>
                       <div class="info">
-                          <a href="#" class="d-block">Tri Rahmat Aribowo</a>
+                          <a href="#" class="d-block"><?= $this->session->userdata('name'); ?></a>
                       </div>
                   </div>
 
@@ -42,7 +42,7 @@
                   <nav class="mt-2">
                       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                           <li class="nav-item">
-                              <a href="<?= base_url('mahasiswa/home') ?>" class="nav-link">
+                              <a href="<?= base_url('kps/home') ?>" class="nav-link">
                                   <i class="nav-icon fas fa-tachometer-alt"></i>
                                   <p>
                                       Dashboard
@@ -51,7 +51,16 @@
                           </li>
 
                           <li class="nav-item">
-                              <a href="<?= base_url('mahasiswa/pkl') ?>" class="nav-link">
+                              <a href="<?= base_url('kps/pkl') ?>" class="nav-link">
+                                  <i class="nav-icon fas fa-table"></i>
+                                  <p>
+                                      Data PKL
+                                  </p>
+                              </a>
+                          </li>
+
+                          <li class="nav-item">
+                              <a href="<?= base_url('kps/perusahaan') ?>" class="nav-link">
                                   <i class="nav-icon fas fa-table"></i>
                                   <p>
                                       Data Perusahaan
@@ -60,46 +69,21 @@
                           </li>
 
                           <li class="nav-item">
-                              <a href="<?= base_url('mahasiswa/mhs') ?>" class="nav-link">
+                              <a href="<?= base_url('kps/dosen') ?>" class="nav-link">
                                   <i class="nav-icon fas fa-users"></i>
                                   <p>
-                                      Data Mahasiswa
+                                      Data Dosen
                                   </p>
                               </a>
                           </li>
 
                           <li class="nav-item">
-                              <a href="<?= base_url('mahasiswa/usr') ?>" class="nav-link">
-                                  <i class="nav-icon fas fa-user-shield"></i>
+                              <a href="<?= base_url('kps/mahasiswa') ?>" class="nav-link">
+                                  <i class="nav-icon fas fa-users"></i>
                                   <p>
-                                      Data Users
+                                      Data Mahasiswa
                                   </p>
                               </a>
-                          </li>
-
-                          <li class="nav-item has-treeview">
-                              <a href="#" class="nav-link">
-                                  <i class="nav-icon fas fa-tools"></i>
-                                  <p>
-                                      Setting
-                                      <i class="fas fa-angle-left right"></i>
-                                      <span class="badge badge-info right">Coming soon</span>
-                                  </p>
-                              </a>
-                              <ul class="nav nav-treeview">
-                                  <li class="nav-item">
-                                      <a href="../layout/top-nav.html" class="nav-link">
-                                          <i class="far fa-circle nav-icon"></i>
-                                          <p>Template</p>
-                                      </a>
-                                  </li>
-                                  <li class="nav-item">
-                                      <a href="../layout/top-nav-sidebar.html" class="nav-link">
-                                          <i class="far fa-circle nav-icon"></i>
-                                          <p>Apps</p>
-                                      </a>
-                                  </li>
-                              </ul>
                           </li>
 
                           <li class="nav-header">Auht User!</li>
